@@ -19,5 +19,6 @@ TODO
 
 [] Add test cases
 [] Add another sources of official information
+[x] Add CD with CircleCI
 
 Issues and PR's are welcome!
