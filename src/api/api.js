@@ -47,7 +47,7 @@ export const fetchConfirmedCasesFromDayOne = async type => {
 export const fetchCountrySummary = async () => {
   try {
     const data = await apiInstance.get(
-      `live/country/${process.env.REACT_APP_COUNTRY}/status/confirmed`
+      `live/country/${process.env.REACT_APP_COUNTRY_FOR_REQUEST}/status/confirmed`
     );
     return data;
   } catch (error) {
