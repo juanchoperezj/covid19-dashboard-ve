@@ -8,7 +8,10 @@ const Footer = () => (
     <Label>Hecho con</Label>
     <Icon src={codeIcon} alt="code" />
     <Label>- Check the code on</Label>
-    <a href="" target="_blank">
+    <a
+      href="https://github.com/eldelasfranelas/covid19-dashboard-ve"
+      target="_blank"
+    >
       <Icon src={gitIcon} alt="github" />
     </a>
   </Container>
