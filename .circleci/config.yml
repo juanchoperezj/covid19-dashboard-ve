@@ -1,0 +1,35 @@
+version: 2.1
+orbs:
+  node: circleci/node@1.1.6
+jobs:
+  build-only:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - run: curl -o- -L https://yarnpkg.com/install.sh | bash
+      - run: export PATH="$HOME/.yarn/bin:$PATH"
+      - restore_cache:
+          keys:
+            - yarn-lock-{{ checksum "yarn.lock" }}
+      - run: yarn install
+      - save_cache:
+          key: yarn-lock-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/project/node_modules
+      - run: yarn build
+      - run:
+          name: "Deploy to Firebase Hosting"
+          command: "./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN"
+  build-and-test:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: yarn install
+workflows:
+  build-only:
+    jobs:
+      - build-only

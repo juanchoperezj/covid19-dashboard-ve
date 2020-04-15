@@ -11,6 +11,7 @@ const Footer = () => (
     <a
       href="https://github.com/eldelasfranelas/covid19-dashboard-ve"
       target="_blank"
+      rel="noopener noreferrer"
     >
       <Icon src={gitIcon} alt="github" />
     </a>

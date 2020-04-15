@@ -4,7 +4,7 @@
  */
 export const converKeyToLowerCase = data => {
   if (!data) {
-    throw "Data should be a valid array";
+    throw Error;
   }
   return Object.fromEntries(
     Object.entries(data).map(([k, v]) => [k.toLowerCase(), v])
