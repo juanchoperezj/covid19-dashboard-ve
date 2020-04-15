@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import PropTypes from "prop-types";
+import React from "react";
 import { connect } from "easy-redux-helpers";
 import { DetailContainer } from "./styled-details";
 

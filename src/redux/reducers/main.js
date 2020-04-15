@@ -28,10 +28,7 @@ const config = {
   SAVE_SUMMARY_LOCAL_STATS: (state, action) => {
     state.local = action.local;
   },
-  SAVE_COVID_CASES_BY_TYPE: (state, action) => {
-    const { caseType, data } = action;
-    // state[caseType] = data;
-  },
+  SAVE_COVID_CASES_BY_TYPE: () => {},
   SAVE_COVID_CASES_BY_ALL_TYPES: (state, action) => {
     state.chartData = action.chartData;
   }

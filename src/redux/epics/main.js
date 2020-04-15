@@ -43,6 +43,7 @@ export const startFetchSummaryStatsFlow = action$ =>
     flatMap(() =>
       Observable.from(fetchSummaryStats()).pipe(
         flatMap(response => {
+          console.log({ response });
           let global = converKeyToLowerCase(response.global);
           Object.keys(global).forEach(
             key => (global[key] = global[key].toLocaleString())

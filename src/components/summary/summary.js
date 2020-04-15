@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "easy-redux-helpers";
 import {
@@ -9,31 +9,18 @@ import {
   Title,
   Row
 } from "./styled-summary";
-import useWindowDimensions from "../../hooks/useWindowDimensions";
 
-const global = {
-  newconfirmed: 65889,
-  totalconfirmed: 1826633,
-  newdeaths: 4672,
-  totaldeaths: 108114,
-  newrecovered: 27255,
-  totalrecovered: 447732
-};
-
-const local = {
-  deaths: 10,
-  recovered: 50,
-  confirmed: 150
-};
-
-const Regions = () => {
-  console.log({ local });
-  const { width } = useWindowDimensions();
+const Summary = ({ local, global }) => {
   return (
     <RegionContainer>
       {local && (
         <CardContainer>
-          <Title>🇻🇪 Resumen de Casos</Title>
+          <Title>
+            <span role="img" aria-label="country">
+              🇻🇪
+            </span>{" "}
+            Resumen de Casos
+          </Title>
           <Row>
             <div>
               <Label>Confirmados</Label>
@@ -53,7 +40,12 @@ const Regions = () => {
         </CardContainer>
       )}
       <CardContainer>
-        <Title>🌏 COVID-19 en el mundo</Title>
+        <Title>
+          <span role="img" aria-label="country">
+            🌏
+          </span>{" "}
+          COVID-19 en el mundo
+        </Title>
         <Row>
           <div>
             <Label>Nuevos confirmados</Label>
@@ -89,11 +81,14 @@ const Regions = () => {
   );
 };
 
-Regions.propTypes = {};
+Summary.propTypes = {
+  global: PropTypes.oneOf([PropTypes.array, PropTypes.shape({})]).isRequired,
+  local: PropTypes.oneOf([PropTypes.array, PropTypes.shape({})]).isRequired
+};
 
-Regions.defaultProps = {};
+Summary.defaultProps = {};
 
-export default connect(Regions).to({
+export default connect(Summary).to({
   props: {
     global: "state.main.global",
     local: "state.main.local"
