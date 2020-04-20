@@ -16,8 +16,8 @@ Another project builded in Quarantine
 
 # TODO
 
-- [] Add test cases
-- [] Add another sources of official information
+- [ ] Add test cases
+- [ ] Add another sources of official information
 - [x] Add CD with CircleCI
 - [x] Dark mode
 
