@@ -6,7 +6,7 @@ import {
   fetch_covid_cases_by_type,
   fetch_covid_cases_by_all_types
 } from "../../redux/actions/main";
-import { HomeContainer, Title } from "./styled-home";
+import { HomeContainer, Title, Button, SimpleRow } from "./styled-home";
 import Summary from "../summary/summary";
 import Charts from "../charts/charts";
 import Footer from "../footer/footer";
@@ -22,8 +22,10 @@ const Home = ({
 
   return (
     <HomeContainer>
-      <Title>{process.env.REACT_APP_HOME_TITLE}</Title>
-      <button onClick={toggleDarkMode}>toggle dark</button>
+      <SimpleRow>
+        <Title>{process.env.REACT_APP_HOME_TITLE}</Title>
+        <Button onClick={toggleDarkMode}>Modo Oscuro</Button>
+      </SimpleRow>
       <Charts />
       <Summary />
       <Footer />
