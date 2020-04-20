@@ -12,7 +12,8 @@ import Charts from "../charts/charts";
 import Footer from "../footer/footer";
 
 const Home = ({
-  actions: { fetch_covid_summary_stats, fetch_covid_cases_by_all_types }
+  actions: { fetch_covid_summary_stats, fetch_covid_cases_by_all_types },
+  toggleDarkMode
 }) => {
   useEffect(() => {
     fetch_covid_summary_stats();
@@ -22,6 +23,7 @@ const Home = ({
   return (
     <HomeContainer>
       <Title>{process.env.REACT_APP_HOME_TITLE}</Title>
+      <button onClick={toggleDarkMode}>toggle dark</button>
       <Charts />
       <Summary />
       <Footer />

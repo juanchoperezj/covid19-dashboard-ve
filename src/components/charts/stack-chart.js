@@ -10,23 +10,29 @@ import {
   Tooltip
 } from "recharts";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
+import useDarkMode from "../../hooks/useDarkMode";
 
 const LineChart = ({ chartData, activeCharts }) => {
   const { width } = useWindowDimensions();
+  const [theme] = useDarkMode();
 
   return (
     <AreaChart data={chartData} width={width * 0.75} height={450}>
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="date" />
       <YAxis />
-      <Tooltip />
+      <Tooltip
+        wrapperStyle={{
+          color: theme.text
+        }}
+      />
       {activeCharts.confirmed && (
         <Area
           name="Confirmados"
           type="basis"
           dataKey="confirmed"
           stackId="3"
-          stroke="#8884d8"
+          stroke="#f1c40f"
           fill="#f1c40f"
         />
       )}
@@ -36,7 +42,7 @@ const LineChart = ({ chartData, activeCharts }) => {
           type="basis"
           dataKey="recovered"
           stackId="2"
-          stroke="#ffc658"
+          stroke="#27ae60"
           fill="#27ae60"
         />
       )}
@@ -47,7 +53,7 @@ const LineChart = ({ chartData, activeCharts }) => {
           type="basis"
           dataKey="deaths"
           stackId="1"
-          stroke="#82ca9d"
+          stroke="#c0392b"
           fill="#c0392b"
         />
       )}
