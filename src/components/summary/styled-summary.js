@@ -23,7 +23,7 @@ export const CardContainer = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 5px; /* 5px rounded corners */
-  background-color: #ecf0f1;
+  background-color: ${({ theme }) => theme.cardBackground};
 
   @media all and (max-width: 850px) {
     width: auto;

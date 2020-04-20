@@ -19,7 +19,6 @@ export const fetchSummaryStats = async () => {
     const data = await apiInstance.get("summary");
     return data;
   } catch (error) {
-    console.log({ error });
     return error.code;
   }
 };
@@ -35,8 +34,6 @@ export const fetchConfirmedCasesFromDayOne = async type => {
     );
     return data;
   } catch (error) {
-    console.log(process.env);
-    console.log({ error });
     return error.code;
   }
 };

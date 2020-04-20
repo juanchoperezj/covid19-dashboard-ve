@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 80px;
-  background-color: #ecf0f1;
+  background-color: ${({ theme }) => theme.footerBackground};
   align-items: center;
   justify-content: center;
   display: flex;
@@ -11,6 +11,7 @@ export const Container = styled.div`
 
 export const Label = styled.p`
   margin: 5px 0 5px 0;
+  color: ${({ theme }) => theme.text};
 `;
 
 export const Icon = styled.img`

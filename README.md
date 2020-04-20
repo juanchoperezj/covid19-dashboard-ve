@@ -14,11 +14,11 @@ This project was build using:
 
 Another project builded in Quarantine
 
+# TODO
 
-TODO
-
-[] Add test cases
-[] Add another sources of official information
-[x] Add CD with CircleCI
+- [] Add test cases
+- [] Add another sources of official information
+- [x] Add CD with CircleCI
+- [x] Dark mode
 
 Issues and PR's are welcome!

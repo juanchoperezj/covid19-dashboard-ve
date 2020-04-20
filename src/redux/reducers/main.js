@@ -22,7 +22,6 @@ const config = {
     state.text = action.text;
   },
   SAVE_SUMMARY_STATS: (state, action) => {
-    console.log({ action });
     state.global = action.global;
   },
   SAVE_SUMMARY_LOCAL_STATS: (state, action) => {
