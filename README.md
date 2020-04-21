@@ -22,3 +22,14 @@ Another project builded in Quarantine
 - [x] Dark mode
 
 Issues and PR's are welcome!
+
+# Awesome resources 👓
+
+https://daystozero.org/
+Days to zero COVID-19 cases.
+
+https://covid3d.live/
+COVID-19 3D map.
+
+https://covid19.health/
+COVID-19 with transmissions trace, timelapse of spread.
